@@ -1,0 +1,26 @@
+import unittest
+import math
+import cProfile
+#Выполнила Скрипина Анна Юрьевна, вариант №13
+def calc(x):
+    if x < 1:
+        y = 3 * math.sin(x) + math.exp(x)
+    else:
+        y = math.atan(x ** x)
+    return y
+
+class TestCalculateY(unittest.TestCase):
+    def test_x_less_than_1(self):
+        x = 0
+        expected_y = 3 * math.sin(x) + math.exp(x)
+        self.assertAlmostEqual(calc(x), expected_y)
+
+    def test_x_greater_than_1(self):
+        x = 2
+        expected_y = math.atan(x ** x)
+        self.assertAlmostEqual(calc(x), expected_y)
+
+    def test_x_equal_1(self):
+        x = 1
+        expected_y = math.atan(x ** x)
+        self.assertAlmostEqual(calc(x), expected_y)

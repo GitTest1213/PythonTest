@@ -1,0 +1,21 @@
+import math
+#Выполнила Скрипина Анна Юрьевна, вариант №13
+def calc(*args):
+    a = list()
+    for x in args:
+        try:
+            if x < 1:
+                y = 3*math.sin(x) + math.exp(x)
+                a.append(y)
+            else:
+                y = math.atan(x**x)
+                a.append(y)
+        except ValueError:
+            print("Ошибка: введено некорректное значение")
+    return a
+
+
+a = int(input())
+b = int(input())
+res = calc(a, b)
+print(res)
